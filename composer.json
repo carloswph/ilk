@@ -1,0 +1,21 @@
+{
+    "name": "carloswph/ilk",
+    "description": "Custom Post Type and Custom Taxonomies helper for Wordpress.",
+    "type": "library",
+    "require": {
+        "illuminate/support": "9.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ilk\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WP Helpers",
+            "email": "carlos@wp-helpers.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
