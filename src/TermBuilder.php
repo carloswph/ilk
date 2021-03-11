@@ -29,7 +29,7 @@ class TermBuilder
     protected $is_cat = false;
     protected $menu = true;
 
-    public $app_slug;
+    public $i18n;
 
     /**
      * Term constructor.
@@ -44,6 +44,7 @@ class TermBuilder
         $this->type = $this->prefix . strtolower($type);
 
         $this->post = $post->type;
+        $this->i18n = $post->getI18n();
  
         // Register the custom taxonomy
         add_action('init', array($this, 'register'));
@@ -58,21 +59,21 @@ class TermBuilder
     public function register()
     {
         $labels = array(
-            'name' => _x($this->name, $this->getI18n),
-            'singular_name' => _x($this->singular_name, $this->getI18n),
-            'search_items' =>  __( 'Search ' . $this->name, $this->getI18n),
-            'popular_items' => __( 'Popular ' . $this->name, $this->getI18n),
-            'all_items' => __('All ' . $this->name, $this->getI18n),
+            'name' => _x($this->name, $this->i18n),
+            'singular_name' => _x($this->singular_name, $this->i18n),
+            'search_items' =>  __( 'Search ' . $this->name, $this->i18n),
+            'popular_items' => __( 'Popular ' . $this->name, $this->i18n),
+            'all_items' => __('All ' . $this->name, $this->i18n),
             'parent_item' => null,
             'parent_item_colon' => null,
-            'edit_item' => __( 'Edit ' . $this->singular_name, $this->getI18n ), 
-            'update_item' => __( 'Update ' . $this->singular_name, $this->getI18n ),
-            'add_new_item' => __( 'Add New ' . $this->singular_name, $this->getI18n ),
-            'new_item_name' => __( 'New '. $this->singular_name . ' Name', $this->getI18n ),
+            'edit_item' => __( 'Edit ' . $this->singular_name, $this->i18n ), 
+            'update_item' => __( 'Update ' . $this->singular_name, $this->i18n ),
+            'add_new_item' => __( 'Add New ' . $this->singular_name, $this->i18n ),
+            'new_item_name' => __( 'New '. $this->singular_name . ' Name', $this->i18n ),
             'separate_items_with_commas' => __( 'Separate' . strtolower($this->name) . ' with commas' ),
             'add_or_remove_items' => __( 'Add or remove ' . strtolower($this->name) ),
             'choose_from_most_used' => __( 'Choose from the most used' . strtolower($this->name) ),
-            'menu_name' => __($this->name, $this->getI18n),
+            'menu_name' => __($this->name, $this->i18n),
           );
 
         $args = array(

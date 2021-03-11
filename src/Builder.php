@@ -26,7 +26,7 @@ class Builder
     protected $rest = false;
     protected $menu = true;
 
-    public $app_slug;
+    public $app_slug = 'ilk';
 
     /**
      * Type constructor.
@@ -57,19 +57,19 @@ class Builder
 	public function register()
 	{
 		$labels = array(
-            'name'                  => __($this->name, $this->getI18n),
-            'singular_name'         => __($this->singular_name, $this->getI18n),
-            'add_new'               => __('Add New', $this->getI18n),
-            'add_new_item'          => __('Add New ' . $this->singular_name, $this->getI18n),
-            'edit_item'             => __('Edit ' . $this->singular_name, $this->getI18n),
-            'new_item'              => __('New ' . $this->singular_name, $this->getI18n),
-            'all_items'             => __('All ' . $this->name, $this->getI18n),
-            'view_item'             => __('View ' . $this->name, $this->getI18n),
-            'search_items'          => __('Search ' . $this->name, $this->getI18n),
-            'not_found'             => __('No ' . strtolower($this->name) . ' found', $this->getI18n),
-            'not_found_in_trash'    => __('No ' . strtolower($this->name) . ' found in Trash', $this->getI18n),
+            'name'                  => __($this->name, $this->getI18n()),
+            'singular_name'         => __($this->singular_name, $this->getI18n()),
+            'add_new'               => __('Add New', $this->getI18n()),
+            'add_new_item'          => __('Add New ' . $this->singular_name, $this->getI18n()),
+            'edit_item'             => __('Edit ' . $this->singular_name, $this->getI18n()),
+            'new_item'              => __('New ' . $this->singular_name, $this->getI18n()),
+            'all_items'             => __('All ' . $this->name, $this->getI18n()),
+            'view_item'             => __('View ' . $this->name, $this->getI18n()),
+            'search_items'          => __('Search ' . $this->name, $this->getI18n()),
+            'not_found'             => __('No ' . strtolower($this->name) . ' found', $this->getI18n()),
+            'not_found_in_trash'    => __('No ' . strtolower($this->name) . ' found in Trash', $this->getI18n()),
             'parent_item_colon'     => '',
-            'menu_name'             => __($this->name, $this->getI18n)
+            'menu_name'             => __($this->name, $this->getI18n())
         );
  
         $args = array(
@@ -152,7 +152,7 @@ class Builder
 		$this->app_slug = $slug;
 	}
 	
-	public function getI18n()
+	public function getI18n()()
 	{
 		return $this->app_slug;
 	}
