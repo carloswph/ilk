@@ -2,6 +2,13 @@
 
 namespace Ilk;
 
+/**
+ * Manages custom taxonomies
+ *
+ * @since 1.0.0
+ * @package Ilk\TermBuilder
+ * @author WP Helpers | Carlos Matos
+ */
 class TermBuilder
 {
 
@@ -19,12 +26,13 @@ class TermBuilder
 
     protected $prefix = 'tax_';
     protected $rest = false;
+    protected $is_cat = false;
     protected $menu = true;
 
     public $app_slug;
 
     /**
-     * Type constructor.
+     * Term constructor.
      *
      * When class is instantiated
      */
@@ -37,10 +45,16 @@ class TermBuilder
 
         $this->post = $post->type;
  
-        // Register the post type
+        // Register the custom taxonomy
         add_action('init', array($this, 'register'));
     }
 
+    /**
+     * Registers the new taxonomy
+     *
+     * @since 1.0.0
+     * @return void
+     */
     public function register()
     {
         $labels = array(
@@ -63,7 +77,7 @@ class TermBuilder
 
         $args = array(
             'slug' => $this->slug,
-            'hierarchical' => false,
+            'hierarchical' => $this->is_cat,
             'labels' => $labels,
             'show_ui' => true,
             'show_admin_column' => true,
@@ -82,9 +96,26 @@ class TermBuilder
 
     }
 
+    /**
+     * Enables a rest endpoint to this taxonomy
+     *
+     * @since 1.0.0
+     * @return void
+     */
     public function enableRest()
     {
         $this->rest = true;
+    }
+
+    /**
+     * Sets taxonomy as hierarchical (like a category)
+     *
+     * @since 1.0.0
+     * @return void
+     */
+    public function likeCategory()
+    {
+        $this->is_cat = true;
     }
 
 }

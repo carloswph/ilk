@@ -2,6 +2,13 @@
 
 namespace Ilk;
 
+/**
+ * Manages custom post types
+ *
+ * @since 1.0.0
+ * @package Ilk\TermBuilder
+ * @author WP Helpers | Carlos Matos
+ */
 class Builder
 {
 
@@ -116,6 +123,15 @@ class Builder
 		$this->rest = true;
 	}
 
+    /**
+    * Sets menu visible and/or position
+    *
+    * @since 1.0.0
+    * @param bool|string $config
+    *
+    * @author WP Helpers | Carlos Matos
+    * @throws new \Exception(Failure::ILK_WRONG_TYPE);
+    */
 	public function setMenu($config)
 	{
 		if(is_bool($config) && $config === false) {
@@ -140,5 +156,10 @@ class Builder
 	{
 		return $this->app_slug;
 	}
+
+    public function setSupports($features)
+    {
+        add_post_type_support($this->slug, $features);
+    }
 
 }
