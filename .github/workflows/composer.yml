@@ -38,5 +38,5 @@ jobs:
       - name: ComposerRequireChecker
   # You may pin to the exact commit or the version.
   # uses: webfactory/docker-composer-require-checker@79a8784b9427cee087b037a194c8a9ce4bfefe4e
-      - uses: webfactory/docker-composer-require-checker@0.1.1
+        uses: webfactory/docker-composer-require-checker@0.1.1
       
