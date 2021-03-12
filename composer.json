@@ -2,8 +2,9 @@
     "name": "carloswph/ilk",
     "description": "Custom Post Type and Custom Taxonomies helper for Wordpress.",
     "type": "library",
+    "keywords": ["wordpress", "custom post type", "post type", "cpt", "cpt helper", "wordpress helper", "custom post type helper"],
     "require": {
-        "illuminate/support": "9.x-dev"
+        "doctrine/inflector": "*"
     },
     "autoload": {
         "psr-4": {

@@ -37,7 +37,7 @@ class Builder
     {
 
         $this->singular_name = $type;
-        $this->name = \Illuminate\Support\Pluralizer::plural($type);
+        $this->name = \Ilk\Plural::plural($type);
         $this->slug = $this->prefix . strtolower($type);
         $this->type = $this->prefix . strtolower($type);
 
