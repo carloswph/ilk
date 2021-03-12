@@ -157,9 +157,29 @@ class Builder
 		return $this->app_slug;
 	}
 
+    /**
+    * Adds features support to the post type
+    *
+    * @since 1.0.1
+    * @param array|string $features
+    *
+    * @author WP Helpers | Carlos Matos
+    */
     public function setSupports($features)
     {
         add_post_type_support($this->slug, $features);
+    }
+    /**
+    * Removes features support to the post type
+    *
+    * @since 1.0.1
+    * @param array|string $features
+    *
+    * @author WP Helpers | Carlos Matos
+    */
+    public function dropSupports($features)
+    {
+        remove_post_type_support($this->slug, $features);
     }
 
 }
