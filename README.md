@@ -1,5 +1,7 @@
 # Ilk
 
+[![Codacy Security Scan](https://github.com/carloswph/ilk/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/carloswph/ilk/actions/workflows/codacy-analysis.yml)
+
 Custom post types and custom taxonomies - one of the must-haves for any WP developer or web designers. They allow Wordpress websites to be turned into platforms, services and entire systems. There are thousands of ways of creating post types and taxonomies, and also a number of helper classes and wrappers. So, why do we need yet another?
 
 Most post type helpers have something in common: they are not maintained. With Ilk, we come with a different proposal - to keep things always up-to-date, considering WP core, and launch new features and tools frequently.
