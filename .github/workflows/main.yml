@@ -27,10 +27,3 @@ jobs:
       
       - name: The PHP Security Checker
       - uses: symfonycorp/security-checker-action@v2
-
-      - name: composer-php
-      - uses: nick-zh/composer@php7.4
-      
-      - name: Supported PHP Versions
-      - uses: WyriHaximus/github-action-supported-php-versions@v1
-
