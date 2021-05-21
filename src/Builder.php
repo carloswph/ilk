@@ -152,7 +152,7 @@ class Builder
 		$this->app_slug = $slug;
 	}
 	
-	public function getI18n()()
+	public function getI18n()
 	{
 		return $this->app_slug;
 	}
